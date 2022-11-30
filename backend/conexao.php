@@ -1,8 +1,8 @@
 <?php
-$servername = "";
+$servername = "10.30.10.41";
 $username = "root";
 $password = "Senha123";
-$database = "meubanco";
+$database = "BancodeDados";
 
 // Criar conexão
 
