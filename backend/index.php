@@ -7,9 +7,9 @@ include 'conexao.php';
 $id =  rand(1, 999);
 $nome = $_POST["nome"];
 $email = $_POST["email"];
-$comentario = $_POST["comentario"];
+$comentarios = $_POST["comentario"];
 
-$query = "INSERT INTO mensagens(id, nome, email, comentario) VALUES ('$id', '$nome', '$email', '$comentario')";
+$query = "INSERT INTO mensagens(id, nome, email, comentarios) VALUES ('$id', '$nome', '$email', '$comentarios');";
 
 
 if ($link->query($query) === TRUE) {

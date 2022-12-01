@@ -1,5 +1,5 @@
 <?php
-$servername = "10.30.10.41";
+$servername = "172.17.0.3";
 $username = "root";
 $password = "Senha123";
 $database = "BancodeDados";
@@ -14,5 +14,4 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
-
 ?>
