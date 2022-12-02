@@ -1,6 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: database-deployment
+  labels:
+    app: databasemysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: databasemysql
+  template:
+    metadata:
+      labels:
+        app: databasemysql
+    spec:
+      containers:
+      - name: databasemysql
+        image: titanpxp/databasemysql:2.0
+        ports:
+        - containerPort: 3306
+          
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
   name: backend-deployment
   labels:
     app: backend
@@ -21,16 +46,3 @@ spec:
         - containerPort: 80
           
 
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: loadbalancer-webserver
-spec:
-  selector:
-    app: backend
-  ports:
-    - port: 80
-      targetPort: 80
-  type: LoadBalancer
